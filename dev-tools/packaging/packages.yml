@@ -224,11 +224,6 @@ specs:
       spec:
         <<: *binary_spec
 
-    - os: linux
-      types: [deb, rpm]
-      spec:
-        <<: *deb_rpm_spec
-
   # Official Beats
   elastic_beat:
     ###
@@ -262,13 +257,6 @@ specs:
         <<: *apache_license_for_binaries
         name: '{{.BeatName}}-oss'
 
-    - os: linux
-      types: [deb, rpm]
-      spec:
-        <<: *deb_rpm_spec
-        <<: *apache_license_for_deb_rpm
-        name: '{{.BeatName}}-oss'
-
     ###
     # Elastic Licensed Packages
     ###
@@ -295,9 +283,3 @@ specs:
       spec:
         <<: *binary_spec
         <<: *elastic_license_for_binaries
-
-    - os: linux
-      types: [deb, rpm]
-      spec:
-        <<: *deb_rpm_spec
-        <<: *elastic_license_for_deb_rpm
