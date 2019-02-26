@@ -77,7 +77,7 @@ func Package() {
 	customizePackaging()
 
 	mg.Deps(Update, prepareModulePackaging)
-	mg.Deps(CrossBuild, CrossBuildGoDaemon)
+	mg.Deps(Build, BuildGoDaemon)
 	mg.SerialDeps(mage.Package, TestPackages)
 }
 
